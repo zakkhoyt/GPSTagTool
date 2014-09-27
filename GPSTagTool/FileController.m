@@ -52,7 +52,6 @@
         self.rootURL = url;
         [self.filesWithGPSTags removeAllObjects];
         [self.filesWithoutGPSTags removeAllObjects];
-//        [self findFilesWithGPSTagAtPath:url.path recursive:recursive copy:copy updateBlock:updateBlock];
         [self findFilesWithGPSTagAtPath:url.path  recursive:recursive copy:copy updateBlock:updateBlock];
         dispatch_async(dispatch_get_main_queue(), ^{
             completionBlock();
@@ -124,8 +123,12 @@
     
     
     
-    
-    success = [fileManager copyItemAtURL:url toURL:outputURL error:&error];
+    if(self.link){
+        success = [fileManager linkItemAtURL:url toURL:outputURL error:&error];
+    } else {
+        success = [fileManager copyItemAtURL:url toURL:outputURL error:&error];
+    }
+
     if(success == NO){
         return NO;
     } else if(error){

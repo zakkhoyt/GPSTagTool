@@ -18,6 +18,7 @@ static NSString *VWWGPSToolOutputURLKey = @"outputURL";
 @property (weak) IBOutlet NSButton *recursiveCheckButton;
 @property (unsafe_unretained) IBOutlet NSTextView *outputTextView;
 @property (weak) IBOutlet NSTextField *findCountLabel;
+@property (weak) IBOutlet NSButton *linkCheckButton;
 
 @property (weak) IBOutlet NSTextField *findAndCopyCountLabel;
 @property (weak) IBOutlet NSButton *preserveDirStructureButton;
@@ -152,6 +153,8 @@ static NSString *VWWGPSToolOutputURLKey = @"outputURL";
     self.findAndCopyCountLabel.stringValue = @"";
     BOOL preserveDirStructure = self.preserveDirStructureButton.state == NSOnState;
     self.fileController.preserveDirectoryStructure = preserveDirStructure;
+    BOOL link = self.linkCheckButton.state == NSOnState;
+    self.fileController.link = link;
     __block NSUInteger counter = 0;
     self.fileController.outputURL = self.findThenCopyPathControl.URL;
     [self.fileController findFilesWithGPSTagAtURL:self.findPathControl.URL recursive:recursive copy:YES updateBlock:^(NSURL *url) {

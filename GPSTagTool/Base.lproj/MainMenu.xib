@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="101000" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
     </dependencies>
     <objects>
@@ -21,6 +20,7 @@
                 <outlet property="findPathControl" destination="QwL-lz-OaV" id="MHd-K7-xNh"/>
                 <outlet property="findThenCopyButton" destination="STB-Ii-IHd" id="V4x-41-URx"/>
                 <outlet property="findThenCopyPathControl" destination="uib-BW-9gw" id="J4B-Mt-tOU"/>
+                <outlet property="linkCheckButton" destination="4ji-Sp-3SI" id="2Rd-w3-Lea"/>
                 <outlet property="outputTextView" destination="eza-ND-TSj" id="ga1-36-dV1"/>
                 <outlet property="preserveDirStructureButton" destination="vcn-2t-zMg" id="YtJ-GN-nbN"/>
                 <outlet property="recursiveCheckButton" destination="Tx0-iz-ezp" id="e1i-8J-Wes"/>
@@ -829,11 +829,18 @@
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                 </button>
-                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6lr-iR-QwS">
-                                    <rect key="frame" x="16" y="48" width="762" height="17"/>
+                                <button translatesAutoresizingMaskIntoConstraints="NO" id="4ji-Sp-3SI">
+                                    <rect key="frame" x="16" y="44" width="762" height="27"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="17" id="ewG-WX-JJC"/>
+                                        <constraint firstAttribute="height" constant="23" id="bH6-gC-pBn"/>
                                     </constraints>
+                                    <buttonCell key="cell" type="check" title="Create link instead of copy" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KiH-0M-RAJ">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                </button>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6lr-iR-QwS">
+                                    <rect key="frame" x="16" y="14" width="619" height="17"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="d78-Ba-zV3">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -843,15 +850,18 @@
                             </subviews>
                         </view>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="6lr-iR-QwS" secondAttribute="trailing" constant="16" id="4MH-AK-l08"/>
                             <constraint firstItem="uib-BW-9gw" firstAttribute="top" secondItem="3vJ-zI-46c" secondAttribute="top" constant="25" id="GW0-Qg-u7a"/>
+                            <constraint firstItem="STB-Ii-IHd" firstAttribute="leading" secondItem="6lr-iR-QwS" secondAttribute="trailing" constant="9" id="GiO-af-uAt"/>
+                            <constraint firstItem="4ji-Sp-3SI" firstAttribute="leading" secondItem="3vJ-zI-46c" secondAttribute="leading" constant="16" id="Km9-Hx-37c"/>
+                            <constraint firstAttribute="bottom" secondItem="6lr-iR-QwS" secondAttribute="bottom" constant="11" id="Qg8-SH-wU4"/>
                             <constraint firstAttribute="bottom" secondItem="STB-Ii-IHd" secondAttribute="bottom" constant="13" id="WdH-Mc-4bn"/>
-                            <constraint firstItem="6lr-iR-QwS" firstAttribute="top" secondItem="vcn-2t-zMg" secondAttribute="bottom" constant="6" id="dDd-Qc-ASN"/>
                             <constraint firstAttribute="trailing" secondItem="vcn-2t-zMg" secondAttribute="trailing" constant="16" id="dfU-hy-jR3"/>
                             <constraint firstAttribute="trailing" secondItem="STB-Ii-IHd" secondAttribute="trailing" constant="16" id="f8H-bx-Jb3"/>
+                            <constraint firstItem="4ji-Sp-3SI" firstAttribute="top" secondItem="vcn-2t-zMg" secondAttribute="bottom" constant="2" id="fZ5-7n-GO1"/>
+                            <constraint firstAttribute="trailing" secondItem="4ji-Sp-3SI" secondAttribute="trailing" constant="16" id="hp1-3O-TVV"/>
+                            <constraint firstItem="6lr-iR-QwS" firstAttribute="leading" secondItem="3vJ-zI-46c" secondAttribute="leading" constant="16" id="iSe-dS-TPG"/>
                             <constraint firstItem="vcn-2t-zMg" firstAttribute="leading" secondItem="3vJ-zI-46c" secondAttribute="leading" constant="16" id="ibH-Ia-6Iu"/>
                             <constraint firstAttribute="trailing" secondItem="uib-BW-9gw" secondAttribute="trailing" constant="16" id="ovP-1v-tYP"/>
-                            <constraint firstItem="6lr-iR-QwS" firstAttribute="leading" secondItem="3vJ-zI-46c" secondAttribute="leading" constant="16" id="q9Z-2F-BTB"/>
                             <constraint firstItem="uib-BW-9gw" firstAttribute="leading" secondItem="3vJ-zI-46c" secondAttribute="leading" constant="16" id="ra4-92-0Lr"/>
                             <constraint firstItem="vcn-2t-zMg" firstAttribute="top" secondItem="uib-BW-9gw" secondAttribute="bottom" constant="10" id="uFR-02-D7m"/>
                             <constraint firstAttribute="height" constant="146" id="zQL-Wu-kr9"/>

@@ -13,6 +13,7 @@
 @interface FileController ()
 @property (nonatomic, strong) NSMutableArray *filesWithGPSTags;
 @property (nonatomic, strong) NSMutableArray *filesWithoutGPSTags;
+@property (nonatomic, strong) NSURL *rootURL;
 @end
 
 @implementation FileController
@@ -48,6 +49,7 @@
 -(void)findFilesWithGPSTagAtURL:(NSURL*)url recursive:(BOOL)recursive copy:(BOOL)copy updateBlock:(VWWURLBlock)updateBlock completionBlock:(VWWEmptyBlock)completionBlock{
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        self.rootURL = url;
         [self.filesWithGPSTags removeAllObjects];
         [self.filesWithoutGPSTags removeAllObjects];
 //        [self findFilesWithGPSTagAtPath:url.path recursive:recursive copy:copy updateBlock:updateBlock];
@@ -101,9 +103,29 @@
 
 -(BOOL)copyFileAtURL:(NSURL*)url toOutputURL:(NSURL*)outputURL{
     NSError *error;
-    NSURL *finalURL = [outputURL URLByAppendingPathComponent:url.lastPathComponent];
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL success = [fileManager copyItemAtURL:url toURL:finalURL error:&error];
+    BOOL success = NO;
+    
+    if(self.preserveDirectoryStructure){
+        // ensure subdir exists
+        NSURL *subDirURL = [outputURL URLByDeletingLastPathComponent];
+        if([fileManager fileExistsAtPath:subDirURL.path] == NO){
+            [fileManager createDirectoryAtURL:subDirURL withIntermediateDirectories:YES attributes:nil error:&error];
+        }
+        if(success == NO){
+            NSLog(@"Failed to create subdirectories for output URL: %@", subDirURL);
+            //        return NO;
+        } else if(error){
+            NSLog(@"Error creating subdirectories for output URL: %@\n%@", subDirURL, error.localizedDescription);
+            //        return NO;
+        }
+    }
+    
+    
+    
+    
+    
+    success = [fileManager copyItemAtURL:url toURL:outputURL error:&error];
     if(success == NO){
         return NO;
     } else if(error){
@@ -159,7 +181,20 @@
                     NSLog(@"GPS image: %@", url.path);
                     [self.filesWithGPSTags insertObject:url atIndex:0];
                     if(copy){
-                        [self copyFileAtURL:url toOutputURL:self.outputURL];
+                        if(self.preserveDirectoryStructure){
+                            NSString *rootURLString = self.rootURL.path;
+                            NSString *urlString = url.path;
+                            NSString *subURLString = [urlString stringByReplacingOccurrencesOfString:rootURLString withString:@""];
+                            if([subURLString hasPrefix:@"/"]){
+                                subURLString = [subURLString stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:@""];
+                            }
+                            NSURL *outputURL = [self.outputURL URLByAppendingPathComponent:subURLString];
+                            [self copyFileAtURL:url toOutputURL:outputURL];
+                            
+                        } else {
+                            NSURL *finalURL = [self.outputURL URLByAppendingPathComponent:url.lastPathComponent];
+                            [self copyFileAtURL:url toOutputURL:finalURL];
+                        }
                     }
                     dispatch_async(dispatch_get_main_queue(), ^{
                         updateBlock(url);

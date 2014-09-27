@@ -15,7 +15,7 @@ typedef void (^VWWBOOLBlock)(BOOL success);
 @interface FileController : NSObject
 @property (nonatomic, strong) NSURL *outputURL;
 @property (strong) NSSet *imageTypes;
-
+@property (nonatomic) BOOL preserveDirectoryStructure;
 -(void)findFilesWithGPSTagAtURL:(NSURL*)url recursive:(BOOL)recursive copy:(BOOL)copy updateBlock:(VWWURLBlock)updateBlock completionBlock:(VWWEmptyBlock)completionBlock;
 -(void)copyFilesToOutputDir:(NSURL*)outputURL updateBlock:(VWWURLErrorBlock)updateBlock completionBlock:(VWWIntIntBlock)completionBlock;
 @end

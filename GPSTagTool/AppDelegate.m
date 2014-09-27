@@ -20,6 +20,7 @@ static NSString *VWWGPSToolOutputURLKey = @"outputURL";
 @property (weak) IBOutlet NSTextField *findCountLabel;
 
 @property (weak) IBOutlet NSTextField *findAndCopyCountLabel;
+@property (weak) IBOutlet NSButton *preserveDirStructureButton;
 
 @property (weak) IBOutlet NSWindow *window;
 @property (strong) FileController *fileController;
@@ -44,9 +45,11 @@ static NSString *VWWGPSToolOutputURLKey = @"outputURL";
     NSString *outputURLString = [[NSUserDefaults standardUserDefaults] objectForKey:VWWGPSToolOutputURLKey];
     NSURL *outputURL = nil;
     if(outputURLString == nil){
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSUserDirectory, NSUserDomainMask, YES);
+
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSPicturesDirectory, NSUserDomainMask, YES);
         NSString *picturesPath = [paths objectAtIndex:0];
         NSURL *picturesURL = [NSURL fileURLWithPath:picturesPath];
+        picturesURL = [picturesURL URLByDeletingLastPathComponent];
         outputURL = [picturesURL URLByAppendingPathComponent:@"GPSTagTool"];
         [[NSUserDefaults standardUserDefaults] setObject:outputURL.path forKey:VWWGPSToolOutputURLKey];
     }
@@ -72,11 +75,36 @@ static NSString *VWWGPSToolOutputURLKey = @"outputURL";
         self.findThenCopyButton.enabled = YES;
         self.findPathControl.enabled = YES;
         self.findThenCopyPathControl.enabled = YES;
+        self.fileTypesTextField.enabled = YES;
+        self.recursiveCheckButton.enabled = YES;
+        self.preserveDirStructureButton.enabled = YES;
+        
+        self.findButton.alphaValue = 1.0;
+        self.findThenCopyButton.alphaValue = 1.0;
+        self.findPathControl.alphaValue = 1.0;
+        self.findThenCopyPathControl.alphaValue = 1.0;
+        self.fileTypesTextField.alphaValue = 1.0;
+        self.recursiveCheckButton.alphaValue = 1.0;
+        self.preserveDirStructureButton.alphaValue = 1.0;
+
     } else {
         self.findButton.enabled = NO;
         self.findThenCopyButton.enabled = NO;
         self.findPathControl.enabled = NO;
         self.findThenCopyPathControl.enabled = NO;
+        self.fileTypesTextField.enabled = NO;
+        self.recursiveCheckButton.enabled = NO;
+        self.preserveDirStructureButton.enabled = NO;
+
+        CGFloat alpha = 0.7;
+        self.findButton.alphaValue = alpha;
+        self.findThenCopyButton.alphaValue = alpha;
+        self.findPathControl.alphaValue = alpha;
+        self.findThenCopyPathControl.alphaValue = alpha;
+        self.fileTypesTextField.alphaValue = alpha;
+        self.recursiveCheckButton.alphaValue = alpha;
+        self.preserveDirStructureButton.alphaValue = alpha;
+
     }
 }
 
@@ -117,10 +145,13 @@ static NSString *VWWGPSToolOutputURLKey = @"outputURL";
     
     [self enableControls:NO];
     [self setupImageTypes];
+    
     self.outputTextView.string = @"";
     self.outputString = [[NSMutableString alloc]initWithString:@""];
     BOOL recursive = (BOOL)self.recursiveCheckButton.state == NSOnState;
     self.findAndCopyCountLabel.stringValue = @"";
+    BOOL preserveDirStructure = self.preserveDirStructureButton.state == NSOnState;
+    self.fileController.preserveDirectoryStructure = preserveDirStructure;
     __block NSUInteger counter = 0;
     self.fileController.outputURL = self.findThenCopyPathControl.URL;
     [self.fileController findFilesWithGPSTagAtURL:self.findPathControl.URL recursive:recursive copy:YES updateBlock:^(NSURL *url) {

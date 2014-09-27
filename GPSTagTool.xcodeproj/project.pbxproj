@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C697127919D736F900DAC25F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C697127819D736F900DAC25F /* main.m */; };
+		C697127C19D736F900DAC25F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C697127B19D736F900DAC25F /* AppDelegate.m */; };
+		C697127E19D736F900DAC25F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C697127D19D736F900DAC25F /* Images.xcassets */; };
+		C697128119D736F900DAC25F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C697127F19D736F900DAC25F /* MainMenu.xib */; };
+		C697128D19D736F900DAC25F /* GPSTagToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C697128C19D736F900DAC25F /* GPSTagToolTests.m */; };
+		C697129819D7382A00DAC25F /* FileController.m in Sources */ = {isa = PBXBuildFile; fileRef = C697129719D7382A00DAC25F /* FileController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C697128719D736F900DAC25F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C697126B19D736F900DAC25F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C697127219D736F900DAC25F;
+			remoteInfo = GPSTagTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C697127319D736F900DAC25F /* GPSTagTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSTagTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C697127719D736F900DAC25F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C697127819D736F900DAC25F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C697127A19D736F900DAC25F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C697127B19D736F900DAC25F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C697127D19D736F900DAC25F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C697128019D736F900DAC25F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C697128619D736F900DAC25F /* GPSTagToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPSTagToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C697128B19D736F900DAC25F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C697128C19D736F900DAC25F /* GPSTagToolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPSTagToolTests.m; sourceTree = "<group>"; };
+		C697129619D7382A00DAC25F /* FileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileController.h; sourceTree = "<group>"; };
+		C697129719D7382A00DAC25F /* FileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C697127019D736F900DAC25F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C697128319D736F900DAC25F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C697126A19D736F900DAC25F = {
+			isa = PBXGroup;
+			children = (
+				C697127519D736F900DAC25F /* GPSTagTool */,
+				C697128919D736F900DAC25F /* GPSTagToolTests */,
+				C697127419D736F900DAC25F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C697127419D736F900DAC25F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C697127319D736F900DAC25F /* GPSTagTool.app */,
+				C697128619D736F900DAC25F /* GPSTagToolTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C697127519D736F900DAC25F /* GPSTagTool */ = {
+			isa = PBXGroup;
+			children = (
+				C697127A19D736F900DAC25F /* AppDelegate.h */,
+				C697127B19D736F900DAC25F /* AppDelegate.m */,
+				C697127D19D736F900DAC25F /* Images.xcassets */,
+				C697127F19D736F900DAC25F /* MainMenu.xib */,
+				C697127619D736F900DAC25F /* Supporting Files */,
+				C697129619D7382A00DAC25F /* FileController.h */,
+				C697129719D7382A00DAC25F /* FileController.m */,
+			);
+			path = GPSTagTool;
+			sourceTree = "<group>";
+		};
+		C697127619D736F900DAC25F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C697127719D736F900DAC25F /* Info.plist */,
+				C697127819D736F900DAC25F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C697128919D736F900DAC25F /* GPSTagToolTests */ = {
+			isa = PBXGroup;
+			children = (
+				C697128C19D736F900DAC25F /* GPSTagToolTests.m */,
+				C697128A19D736F900DAC25F /* Supporting Files */,
+			);
+			path = GPSTagToolTests;
+			sourceTree = "<group>";
+		};
+		C697128A19D736F900DAC25F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C697128B19D736F900DAC25F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C697127219D736F900DAC25F /* GPSTagTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C697129019D736F900DAC25F /* Build configuration list for PBXNativeTarget "GPSTagTool" */;
+			buildPhases = (
+				C697126F19D736F900DAC25F /* Sources */,
+				C697127019D736F900DAC25F /* Frameworks */,
+				C697127119D736F900DAC25F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GPSTagTool;
+			productName = GPSTagTool;
+			productReference = C697127319D736F900DAC25F /* GPSTagTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C697128519D736F900DAC25F /* GPSTagToolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C697129319D736F900DAC25F /* Build configuration list for PBXNativeTarget "GPSTagToolTests" */;
+			buildPhases = (
+				C697128219D736F900DAC25F /* Sources */,
+				C697128319D736F900DAC25F /* Frameworks */,
+				C697128419D736F900DAC25F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C697128819D736F900DAC25F /* PBXTargetDependency */,
+			);
+			name = GPSTagToolTests;
+			productName = GPSTagToolTests;
+			productReference = C697128619D736F900DAC25F /* GPSTagToolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C697126B19D736F900DAC25F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Zakk Hoyt";
+				TargetAttributes = {
+					C697127219D736F900DAC25F = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					C697128519D736F900DAC25F = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = C697127219D736F900DAC25F;
+					};
+				};
+			};
+			buildConfigurationList = C697126E19D736F900DAC25F /* Build configuration list for PBXProject "GPSTagTool" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C697126A19D736F900DAC25F;
+			productRefGroup = C697127419D736F900DAC25F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C697127219D736F900DAC25F /* GPSTagTool */,
+				C697128519D736F900DAC25F /* GPSTagToolTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C697127119D736F900DAC25F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C697127E19D736F900DAC25F /* Images.xcassets in Resources */,
+				C697128119D736F900DAC25F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C697128419D736F900DAC25F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C697126F19D736F900DAC25F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C697127C19D736F900DAC25F /* AppDelegate.m in Sources */,
+				C697129819D7382A00DAC25F /* FileController.m in Sources */,
+				C697127919D736F900DAC25F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C697128219D736F900DAC25F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C697128D19D736F900DAC25F /* GPSTagToolTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C697128819D736F900DAC25F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C697127219D736F900DAC25F /* GPSTagTool */;
+			targetProxy = C697128719D736F900DAC25F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C697127F19D736F900DAC25F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C697128019D736F900DAC25F /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C697128E19D736F900DAC25F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C697128F19D736F900DAC25F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C697129119D736F900DAC25F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GPSTagTool/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C697129219D736F900DAC25F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GPSTagTool/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C697129419D736F900DAC25F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GPSTagToolTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GPSTagTool.app/Contents/MacOS/GPSTagTool";
+			};
+			name = Debug;
+		};
+		C697129519D736F900DAC25F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GPSTagToolTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GPSTagTool.app/Contents/MacOS/GPSTagTool";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C697126E19D736F900DAC25F /* Build configuration list for PBXProject "GPSTagTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C697128E19D736F900DAC25F /* Debug */,
+				C697128F19D736F900DAC25F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C697129019D736F900DAC25F /* Build configuration list for PBXNativeTarget "GPSTagTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C697129119D736F900DAC25F /* Debug */,
+				C697129219D736F900DAC25F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C697129319D736F900DAC25F /* Build configuration list for PBXNativeTarget "GPSTagToolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C697129419D736F900DAC25F /* Debug */,
+				C697129519D736F900DAC25F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C697126B19D736F900DAC25F /* Project object */;
+}
